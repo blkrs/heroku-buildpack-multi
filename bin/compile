@@ -12,6 +12,8 @@ function indent() {
 
 unset GIT_DIR
 
+echo `=====> ls -la $1/`
+
 for BUILDPACK in $(cat $1/.buildpacks); do
   dir=$(mktemp -t buildpackXXXXX)
   rm -rf $dir
