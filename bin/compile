@@ -25,7 +25,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
     branch=""
   fi
 
-  print "=====> Check 2"
+  echo "=====> Check 2"
   if [ "$url" != "" ]; then
     echo "=====> Downloading Buildpack: $url"
 
