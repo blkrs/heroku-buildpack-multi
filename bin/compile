@@ -19,10 +19,13 @@ for BUILDPACK in $(cat $1/.buildpacks); do
   url=${BUILDPACK%#*}
   branch=${BUILDPACK#*#}
 
+  print "Check 1"
+
   if [ "$branch" == "$url" ]; then
     branch=""
   fi
 
+  print "Check 2"
   if [ "$url" != "" ]; then
     echo "=====> Downloading Buildpack: $url"
 
@@ -34,10 +37,12 @@ for BUILDPACK in $(cat $1/.buildpacks); do
     fi
     cd $dir
 
+    print "Check 3"
     if [ "$branch" != "" ]; then
       git checkout $branch >/dev/null 2>&1
     fi
 
+    print "Check 4"
     # we'll get errors later if these are needed and don't exist
     chmod -f +x $dir/bin/{detect,compile,release} || true
 
@@ -50,6 +55,8 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       if [ $? != 0 ]; then
         exit 1
       fi
+
+      print "Check 5"
 
       # check if the buildpack left behind an environment for subsequent ones
       if [ -e $dir/export ]; then
