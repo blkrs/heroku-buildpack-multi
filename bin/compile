@@ -14,7 +14,10 @@ unset GIT_DIR
 
 echo `=====> ls -la $1/`
 
-for BUILDPACK in $(cat $1/.buildpacks); do
+BUILDPACKS="https://github.com/cloudfoundry/java-buildpack.git"
+
+
+for BUILDPACK in $BUILDPACKS; do
   dir=$(mktemp -t buildpackXXXXX)
   rm -rf $dir
 
