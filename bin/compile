@@ -48,7 +48,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
     
     echo "=====> Check 4a"
     
-    echo "=====> "Parameter: $1"
+    echo "=====> Parameter: $1"
     
     framework=$($dir/bin/detect $1)
     
