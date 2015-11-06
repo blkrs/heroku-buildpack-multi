@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Detect script"
+printenv
+
 if [ -f $1/.buildpacks ]; then
   echo "Multipack"
   exit 0
