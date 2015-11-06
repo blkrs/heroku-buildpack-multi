@@ -7,7 +7,8 @@ printenv
 
 for file in `ls /var/vcap/data/dea_next/admin_buildpacks/ `; do
 CMD="/var/vcap/data/dea_next/admin_buildpacks/$file/bin/detect"
-echo "Calling detect script $CMD, result" + `$CMD`
+RESULT=`$CMD`
+echo "Calling detect script $CMD, result: $RESULT EOM"
 done
 
 set -e
