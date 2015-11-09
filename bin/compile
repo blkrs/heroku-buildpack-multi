@@ -11,6 +11,8 @@ RESULT=`$CMD`
 echo "Calling detect script $CMD, result: $RESULT EOM"
 done
 
+ls -lar /tmp/staged
+
 set -e
 
 function indent() {
