@@ -11,7 +11,7 @@ RESULT=`$CMD`
 echo "Calling detect script $CMD, result: $RESULT EOM"
 done
 
-ls -lar /tmp/staged
+ls -laR /tmp/staged
 
 set -e
 
